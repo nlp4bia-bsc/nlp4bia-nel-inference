@@ -1,0 +1,7 @@
+span	codes	terms	similarities
+Ataque al corazón	['22298006', '57054005']	['Infarto de miocardio', 'Infarto agudo de miocardio']	[0.7058, 0.6472]
+dolor fuerte d cabeza	['25064002', '37796009']	['Dolor de cabeza', 'Migraña']	[0.8958, 0.6891]
+aspirina	['412586006', '25064002']	['Ácido acetilsalicílico', 'Dolor de cabeza']	[0.8445, 0.4353]
+Migraña	['37796009', '25064002']	['Migraña', 'Dolor de cabeza']	[1.0, 0.7927]
+hipertension	['38341003', '73211009']	['Hipertensión arterial', 'Diabetes mellitus']	[0.8953, 0.5399]
+DM	['73211009', '38341003']	['Diabetes mellitus', 'Hipertensión arterial']	[0.8794, 0.5147]
