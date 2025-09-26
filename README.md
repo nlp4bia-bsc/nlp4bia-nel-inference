@@ -28,7 +28,11 @@ python nel_inference.py --gazetteer gazetteer.tsv --input input.tsv --output res
 
 ## File Formats
 
-### Gazetteer Example (SNOMED CT terms)
+### Gazetteer
+
+A gazetteer is a dictionary that links terms to their corresponding codes in a terminology or ontology. The gazetteer must be a TSV format file containing two columns: `term` and `code`. Additional columns are allowed but will not be used by the tool.
+
+#### Gazetteer Example (SNOMED CT terms) in Spanish:
 
 ```tsv
 term	code
@@ -45,7 +49,11 @@ Tos	49727002
 Dolor abdominal	21522001
 ```
 
-### Input Example
+### Input
+
+#### Input Example in Spanish:
+
+The input must be a TSV format file containing a column named span with the NER mentions to be linked. Additional columns are also allowed but will not be used by the tool.
 
 ```tsv
 span
@@ -57,7 +65,17 @@ hipertension
 DM
 ```
 
-### Output Example
+### Output
+
+#### Output Example in Spanish:
+
+The output will maintain the exact same format as the input file, with three additional columns:
+
+* `codes`: list of predicted codes for each mention
+
+* `terms`: list of corresponding terms for each code
+
+* `similarities`: similarity scores for each mention-code/term linking
 
 ```tsv
 span	codes	terms	similarities
