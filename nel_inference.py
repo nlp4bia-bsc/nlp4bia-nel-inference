@@ -7,6 +7,7 @@ dense retrieval methods with sentence transformers.
 
 import sys
 import os
+import numpy as np
 import pandas as pd
 import torch
 from nlp4bia.linking.retrievers import DenseRetriever
@@ -73,7 +74,7 @@ def run_nel_inference(gazetteer,
         mentions = input_df.span.unique().tolist()
     else:
         # Use provided mentions list
-        mentions = input_mentions
+        mentions = np.unique(input_mentions)
         input_df = pd.DataFrame({"span": mentions})
 
     # Extract terms from gazetteer for encoding
