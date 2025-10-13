@@ -127,6 +127,12 @@ def run_nel_inference(gazetteer,
     cols_to_move = ["span", "codes", "terms", "similarities"]
     new_order = [col for col in candidates_df.columns if col not in cols_to_move] + cols_to_move
     output = candidates_df[new_order]
+
+    if k == 1:
+        # If only one candidate, flatten lists to single values
+        output["codes"] = output["codes"].apply(lambda x: x[0] if isinstance(x, list) and len(x) > 0 else None)
+        output["terms"] = output["terms"].apply(lambda x: x[0] if isinstance(x, list) and len(x) > 0 else None)
+        output["similarities"] = output["similarities"].apply(lambda x: x[0] if isinstance(x, list) and len(x) > 0 else None)
     
     # Save output if requested
     if save_output:
